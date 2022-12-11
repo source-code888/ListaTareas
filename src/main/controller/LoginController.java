@@ -13,6 +13,7 @@ import javax.swing.*;
 import main.model.UsuarioDAO;
 import main.model.UsuarioDTO;
 import main.view.Login;
+import main.view.Principal;
 
 public class LoginController implements ActionListener, FocusListener, KeyListener {
 
@@ -56,9 +57,14 @@ public class LoginController implements ActionListener, FocusListener, KeyListen
                     if (count == 1) {
                         txtNombre.setText("");
                         pwdPassword.setText("");
-
+                        Principal principal = new Principal();
+                        principal.setTitle("Vista principal");
+                        principal.setLocationRelativeTo(principal);
+                        principal.setResizable(false);
+                        principal.setVisible(true);
+                        this.login.dispose();
                     } else {
-                        
+
                     }
                 }
             }
