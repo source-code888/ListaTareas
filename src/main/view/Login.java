@@ -37,9 +37,10 @@ public class Login extends javax.swing.JFrame {
         LoginController controller = new LoginController(this, this.txtUsuario, this.pwdContra,labels);
         btnAceptar.setText("Aceptar");
         this.btnAceptar.addActionListener(controller);
+        this.pwdContra.addKeyListener(controller);
+        this.txtUsuario.addKeyListener(controller);
         this.txtUsuario.addFocusListener(controller);
         this.pwdContra.addFocusListener(controller);
-        this.pwdContra.addKeyListener(controller);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -91,7 +91,7 @@
         <Property name="text" type="java.lang.String" value="Aceptar"/>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="this.btnAceptar.addActionListener(controller);&#xd;&#xa;this.txtUsuario.addFocusListener(controller);&#xd;&#xa;this.pwdContra.addFocusListener(controller);&#xd;&#xa;this.pwdContra.addKeyListener(controller);&#xd;&#xa;"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="this.btnAceptar.addActionListener(controller);&#xd;&#xa;this.pwdContra.addKeyListener(controller);&#xd;&#xa;this.txtUsuario.addKeyListener(controller);&#xd;&#xa;this.txtUsuario.addFocusListener(controller);&#xd;&#xa;this.pwdContra.addFocusListener(controller);&#xd;&#xa;"/>
         <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="List&lt;JLabel&gt; labels = new ArrayList&lt;&gt;();&#xd;&#xa;labels.add(this.lblUsuario);&#xd;&#xa;labels.add(this.lblPassword);&#xd;&#xa;LoginController controller = new LoginController(this, this.txtUsuario, this.pwdContra,labels);&#xd;&#xa;"/>
       </AuxValues>
     </Component>

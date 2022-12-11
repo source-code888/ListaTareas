@@ -15,7 +15,7 @@ import main.model.UsuarioDTO;
 import main.view.Login;
 import main.view.Principal;
 
-public class LoginController implements ActionListener, FocusListener, KeyListener {
+public class LoginController implements ActionListener, KeyListener, FocusListener {
 
     private Login login;
     private JTextField txtNombre;
@@ -72,48 +72,6 @@ public class LoginController implements ActionListener, FocusListener, KeyListen
     }
 
     @Override
-    public void focusGained(FocusEvent e) {
-        Object obj = e.getSource();
-        if (obj instanceof JTextField txt) {
-            if (txt.equals(txtNombre)) {
-                if (txtNombre.getText().isBlank()) {
-                    labels.get(0).setText("Ingresa tu nombre de usuario");
-                    labels.get(0).setForeground(Color.red);
-                }
-            }
-        }
-        if (obj instanceof JPasswordField pwd) {
-            if (pwd.equals(pwdPassword)) {
-                if (String.valueOf(pwdPassword.getPassword()).isEmpty()) {
-                    labels.get(1).setText("Ingresa tu ncontraseña");
-                    labels.get(1).setForeground(Color.red);
-                }
-            }
-        }
-    }
-
-    @Override
-    public void focusLost(FocusEvent e) {
-        Object obj = e.getSource();
-        if (obj instanceof JTextField txt) {
-            if (txt.equals(txtNombre)) {
-                if (!txtNombre.getText().isBlank()) {
-                    labels.get(0).setText("Usuario");
-                    labels.get(0).setForeground(Color.black);
-                }
-            }
-        }
-        if (obj instanceof JPasswordField pwd) {
-            if (pwd.equals(pwdPassword)) {
-                if (!String.valueOf(pwdPassword.getPassword()).isEmpty()) {
-                    labels.get(1).setText("Contraseña");
-                    labels.get(1).setForeground(Color.black);
-                }
-            }
-        }
-    }
-
-    @Override
     public void keyTyped(KeyEvent e) {
         Object obj = e.getSource();
         if (obj instanceof JPasswordField pwd) {
@@ -131,5 +89,54 @@ public class LoginController implements ActionListener, FocusListener, KeyListen
 
     @Override
     public void keyReleased(KeyEvent e) {
+        Object obj = e.getSource();
+        if (obj instanceof JTextField txt) {
+            if (txt.equals(txtNombre)) {
+                if (!txtNombre.getText().isBlank()) {
+                    labels.get(0).setText("Usuario");
+                    labels.get(0).setForeground(Color.black);
+                } else {
+                    labels.get(0).setText("Ingresa tu nombre de usuario");
+                    labels.get(0).setForeground(Color.red);
+                }
+
+            }
+        }
+        if (obj instanceof JPasswordField pwd) {
+            if (pwd.equals(pwdPassword)) {
+                if (!String.valueOf(pwdPassword.getPassword()).isBlank()) {
+                    labels.get(1).setText("Contraseña");
+                    labels.get(1).setForeground(Color.black);
+                } else {
+                    labels.get(1).setText("Ingresa tu ncontraseña");
+                    labels.get(1).setForeground(Color.red);
+                }
+            }
+        }
+    }
+
+    @Override
+    public void focusGained(FocusEvent e) {
+    }
+
+    @Override
+    public void focusLost(FocusEvent e) {
+        Object obj = e.getSource();
+        if (obj instanceof JTextField txt) {
+            if (txt.equals(txtNombre)) {
+                if (txtNombre.getText().isBlank()) {
+                    labels.get(0).setText("Ingresa tu nombre de usuario");
+                    labels.get(0).setForeground(Color.red);
+                }
+            }
+        }
+        if (obj instanceof JPasswordField pwd) {
+            if (pwd.equals(pwdPassword)) {
+                if (String.valueOf(pwdPassword.getPassword()).isBlank()) {
+                    labels.get(1).setText("Ingresa tu ncontraseña");
+                    labels.get(1).setForeground(Color.red);
+                }
+            }
+        }
     }
 }
