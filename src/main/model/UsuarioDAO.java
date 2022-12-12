@@ -41,7 +41,8 @@ public class UsuarioDAO extends Consult {
     public List<UsuarioDTO> getList() {
         List<UsuarioDTO> usuarios = new ArrayList<>();
         for (Object o : getListObjects()) {
-            if (o instanceof UsuarioDTO usuario) {
+            if (o instanceof UsuarioDTO) {
+                UsuarioDTO usuario = (UsuarioDTO) o;
                 usuarios.add(usuario);
             }
         }

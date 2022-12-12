@@ -34,7 +34,8 @@ public class LoginController implements ActionListener, KeyListener, FocusListen
     @Override
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
-        if (obj instanceof JButton btn) {
+        if (obj instanceof JButton) {
+            JButton btn = (JButton) obj;
             if (btn.getText().equals("Aceptar")) {
                 if (txtNombre.getText().isBlank() && String.valueOf(pwdPassword.getPassword()).isBlank()) {
                     labels.get(0).setText("Ingresa un usuario valido");
@@ -74,7 +75,8 @@ public class LoginController implements ActionListener, KeyListener, FocusListen
     @Override
     public void keyTyped(KeyEvent e) {
         Object obj = e.getSource();
-        if (obj instanceof JPasswordField pwd) {
+        if (obj instanceof JPasswordField) {
+            JPasswordField pwd = (JPasswordField) obj;
             if (pwd.equals(pwdPassword)) {
                 if (String.valueOf(pwdPassword.getPassword()).length() > 8) {
                     e.consume();
@@ -90,7 +92,8 @@ public class LoginController implements ActionListener, KeyListener, FocusListen
     @Override
     public void keyReleased(KeyEvent e) {
         Object obj = e.getSource();
-        if (obj instanceof JTextField txt) {
+        if (obj instanceof JTextField) {
+            JTextField txt = (JTextField) obj;
             if (txt.equals(txtNombre)) {
                 if (!txtNombre.getText().isBlank()) {
                     labels.get(0).setText("Usuario");
@@ -102,7 +105,8 @@ public class LoginController implements ActionListener, KeyListener, FocusListen
 
             }
         }
-        if (obj instanceof JPasswordField pwd) {
+        if (obj instanceof JPasswordField) {
+            JPasswordField pwd = (JPasswordField) obj;
             if (pwd.equals(pwdPassword)) {
                 if (!String.valueOf(pwdPassword.getPassword()).isBlank()) {
                     labels.get(1).setText("Contraseña");
@@ -122,7 +126,8 @@ public class LoginController implements ActionListener, KeyListener, FocusListen
     @Override
     public void focusLost(FocusEvent e) {
         Object obj = e.getSource();
-        if (obj instanceof JTextField txt) {
+        if (obj instanceof JTextField) {
+            JTextField txt = (JTextField) obj;
             if (txt.equals(txtNombre)) {
                 if (txtNombre.getText().isBlank()) {
                     labels.get(0).setText("Ingresa tu nombre de usuario");
@@ -130,7 +135,8 @@ public class LoginController implements ActionListener, KeyListener, FocusListen
                 }
             }
         }
-        if (obj instanceof JPasswordField pwd) {
+        if (obj instanceof JPasswordField) {
+            JPasswordField pwd = (JPasswordField) obj;
             if (pwd.equals(pwdPassword)) {
                 if (String.valueOf(pwdPassword.getPassword()).isBlank()) {
                     labels.get(1).setText("Ingresa tu ncontraseña");
